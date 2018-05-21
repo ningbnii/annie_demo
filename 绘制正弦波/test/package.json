@@ -1,0 +1,25 @@
+{
+  "name": "Flash2xProject",
+  "version": "1.0.0",
+  "description": "通过Flash2x工具转换的项目.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Weclome to Flash2x!!!!!\" && exit 1"
+  },
+  "author": "anlun214 qq:58529016",
+  "license": "MIT",
+  "devDependencies": {
+    "base64-min": "^1.2.0",
+    "del": "^2.2.1",
+    "fs": "0.0.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-pngquant": "^1.0.10",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sequence": "^0.4.5",
+    "gulp-uglify": "^1.5.4",
+    "merge-stream": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}
