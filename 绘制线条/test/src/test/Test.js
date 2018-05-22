@@ -26,6 +26,7 @@ test.Test.prototype.init = function () {
 
     s.addEventListener(annie.MouseEvent.MOUSE_DOWN, s.onMouseDown.bind(this));
     s.addEventListener(annie.MouseEvent.MOUSE_UP, s.onMouseUp.bind(this));
+    s.addEventListener(annie.MouseEvent.MOUSE_MOVE, s.onMouseMove.bind(this));
 };
 
 
@@ -34,7 +35,7 @@ test.Test.prototype.onMouseDown = function (e) {
     s.down = true;
     s.tempx = e.localX;
     s.tempy = e.localY;
-    s.addEventListener(annie.MouseEvent.MOUSE_MOVE, s.onMouseMove.bind(this));
+
 };
 
 test.Test.prototype.onMouseMove = function (e) {
