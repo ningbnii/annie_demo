@@ -47,7 +47,7 @@ test.Test.prototype.init = function () {
     // 绘制曲线
     s.shape.beginStroke('#000000', 1);
     s.shape.moveTo(s.points[0].x, s.points[0].y);
-    for (i = 1; i < s.numPoints - 2; i++) {
+    for (var i = 1; i < s.numPoints - 2; i++) {
         var xc = (s.points[i].x + s.points[i + 1].x) / 2;
         var yc = (s.points[i].y + s.points[i + 1].y) / 2;
         s.shape.quadraticCurveTo(s.points[i].x, s.points[i].y, xc, yc);
