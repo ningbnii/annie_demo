@@ -18,19 +18,29 @@ test.Test.prototype.initUI = function () {
 };
 test.Test.prototype.init = function () {
     var s = this;
-    s.vx = 5;
+    // 角度
+    s.angle = 45;
+    // 速度
+    s.speed = 3;
 
     s.ball = new test.Ball();
     s.addChild(s.ball);
     s.ball.x = 50;
     s.ball.y = 100;
-    s.addEventListener(annie.Event.ENTER_FRAME,s.onEnterFrame.bind(this));
+    s.addEventListener(annie.Event.ENTER_FRAME, s.onEnterFrame.bind(this));
 
 };
 
 test.Test.prototype.onEnterFrame = function (e) {
     var s = this;
-    s.ball.x += s.vx;
+    // 首先把角度转换为弧度
+    var radians = s.angle * Math.PI / 180;
+
+    var vx = Math.cos(radians) * s.speed;
+    var vy = Math.sin(radians) * s.speed;
+
+    s.ball.x += vx;
+    s.ball.y += vy;
 };
 
 
