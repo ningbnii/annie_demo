@@ -51,6 +51,20 @@ test.Test.prototype.onEnterFrame = function (e) {
     s.vy += ay;
     s.shape.x += s.vx;
     s.shape.y += s.vy;
+
+    if (s.shape.x - 20 > 640) {
+        s.shape.x = -20;
+    }
+    if (s.shape.x + 20 < 0) {
+        s.shape.x = 620;
+    }
+    if (s.shape.y - 20 > 1136) {
+        s.shape.y = -20;
+    }
+    if (s.shape.y + 20 < 0) {
+        s.shape.y = 1156;
+    }
+
 };
 
 test.Test.prototype.onMoveLeft = function (e) {
