@@ -22,14 +22,12 @@ test.Test.prototype.init = function () {
     s.count = 100;
     s.gravity = 0.5;
     s.balls = [];
-    s.filter = new annie.ShadowFilter('#000000', 0, 3, 3);
     for (var i = 0; i < s.count; i++) {
         var ball = new test.Ball(2, '#' + Math.random().toString(16).substr(-6));
         ball.x = 320;
         ball.y = 1136;
         ball.vx = Math.random() * 2 - 1;
         ball.vy = Math.random() * -10 - 10;
-        ball.filters = [s.filter];
         s.addChild(ball);
         s.balls.push(ball);
     }
