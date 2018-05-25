@@ -37,7 +37,7 @@ test.Test.prototype.init = function () {
 
 test.Test.prototype.onEnterFrame = function () {
     var s = this;
-    for(var i = 0;i<s.balls.length;i++){
+    for(var i = s.balls.length-1;i>0;i--){
         var ball = s.balls[i];
         ball.x += ball.vx;
         ball.y += ball.vy;
