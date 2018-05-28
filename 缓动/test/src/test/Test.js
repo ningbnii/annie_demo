@@ -34,13 +34,21 @@ test.Test.prototype.init = function () {
 
 test.Test.prototype.onEnterFrame = function () {
     var s = this;
+
     if (s.moveStatus) {
         var dx = s.targetX - s.ball.x;
         var dy = s.targetY - s.ball.y;
-        var vx = dx * s.easing;
-        var vy = dy * s.easing;
-        s.ball.x += vx;
-        s.ball.y += vy;
+        var distance = Math.sqrt(dx*dx+dy*dy);
+        // 结束
+        if(distance<1){
+            s.ball.x = s.targetX;
+            s.ball.y = s.targetY;
+        }else{
+            var vx = dx * s.easing;
+            var vy = dy * s.easing;
+            s.ball.x += vx;
+            s.ball.y += vy;
+        }
     }
 
 };

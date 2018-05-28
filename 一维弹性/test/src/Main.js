@@ -13,8 +13,8 @@ window.addEventListener("load", function () {
      * 渲染模式
      */
     var initScaleMode = annie.StageScaleMode.FIXED_HEIGHT;
-    // iphone x innerHeight = 724  innerWidth = 375 FIXED_WIDTH
-    if (window.innerHeight == 724 && window.innerWidth == 375) {
+    // iphone x innerHeight = 812  innerWidth = 375 FIXED_WIDTH
+    if (window.innerHeight == 812 && window.innerWidth == 375) {
         initScaleMode = annie.StageScaleMode.FIXED_WIDTH;
     }
     var stage = new annie.Stage("annieEngine", 640, 1136, 30, initScaleMode, 0);
