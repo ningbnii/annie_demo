@@ -24,20 +24,46 @@ test.Test.prototype.init = function () {
     s.easing = 0.2;
     s.targetX = 320;
     s.targetY = 568;
+    s.moveStatus = true;
 
     s.addEventListener(annie.Event.ENTER_FRAME, s.onEnterFrame.bind(this));
+    s.ball.addEventListener(annie.MouseEvent.MOUSE_DOWN, s.onMouseDown.bind(this));
+    s.addEventListener(annie.MouseEvent.MOUSE_MOVE, s.onMouseMove.bind(this));
+    s.ball.addEventListener(annie.MouseEvent.MOUSE_UP, s.onMouseUp.bind(this));
 };
 
 test.Test.prototype.onEnterFrame = function () {
     var s = this;
-    var dx = s.targetX - s.ball.x;
-    var dy = s.targetY - s.ball.y;
-    var vx = dx * s.easing;
-    var vy = dy * s.easing;
-    s.ball.x += vx;
-    s.ball.y += vy;
+    if (s.moveStatus) {
+        var dx = s.targetX - s.ball.x;
+        var dy = s.targetY - s.ball.y;
+        var vx = dx * s.easing;
+        var vy = dy * s.easing;
+        s.ball.x += vx;
+        s.ball.y += vy;
+    }
 
 };
 
+test.Test.prototype.onMouseDown = function (e) {
+    var s = this;
+    s.moveStatus = false;
+
+};
+
+test.Test.prototype.onMouseUp = function (e) {
+    var s = this;
+    s.moveStatus = true;
+};
+
+test.Test.prototype.onMouseMove = function (e) {
+    var s = this;
+
+    if (s.moveStatus == false) {
+
+        s.ball.x = e.localX;
+        s.ball.y = e.localY;
+    }
+};
 
 
