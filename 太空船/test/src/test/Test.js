@@ -27,6 +27,7 @@ test.Test.prototype.init = function () {
     s.thrust = 0;
     s.vx = 0;
     s.vy = 0;
+    s.friction = 0.97;
 
     s.shape = new test.Ship();
     s.addChild(s.shape);
@@ -49,6 +50,8 @@ test.Test.prototype.onEnterFrame = function (e) {
     var ay = Math.sin(angle) * s.thrust;
     s.vx += ax;
     s.vy += ay;
+    s.vx *= s.friction;
+    s.vy *= s.friction;
     s.shape.x += s.vx;
     s.shape.y += s.vy;
 
