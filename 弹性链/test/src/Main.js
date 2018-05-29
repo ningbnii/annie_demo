@@ -12,11 +12,8 @@ window.addEventListener("load", function () {
      * 缩放模式
      * 渲染模式
      */
-    var initScaleMode = annie.StageScaleMode.FIXED_HEIGHT;
-    // iphone x innerHeight = 812  innerWidth = 375 FIXED_WIDTH
-    if (window.innerHeight == 812 && window.innerWidth == 375) {
-        initScaleMode = annie.StageScaleMode.FIXED_WIDTH;
-    }
+    var initScaleMode = annie.StageScaleMode.SHOW_ALL;
+
     var stage = new annie.Stage("annieEngine", 640, 1136, 30, initScaleMode, 0);
     //默认关闭自动旋转和自动resize
     // stage.autoResize=true;
