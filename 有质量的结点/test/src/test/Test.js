@@ -21,18 +21,20 @@ test.Test.prototype.init = function () {
 
     s.numParticles = 100;
     s.minDist = 100;
-    s.springAmount = 0.001;
+    s.springAmount = 0.0025;
     s.particles = [];
 
     s.shape = new annie.Shape();
     s.addChild(s.shape);
 
     for (var i = 0; i < s.numParticles; i++) {
-        var particle = new test.Ball(5, '#ffffff');
+        var size = Math.random() * 10 + 2;
+        var particle = new test.Ball(size, '#ffffff');
         particle.x = Math.random() * 640;
         particle.y = Math.random() * 1136;
         particle.vx = Math.random() * 6 - 3;
         particle.vy = Math.random() * 6 - 3;
+        particle.mass = size;
         s.addChild(particle);
         s.particles.push(particle);
     }
@@ -86,10 +88,10 @@ test.Test.prototype.spring = function (partA, partB) {
 
         var ax = dx * s.springAmount;
         var ay = dy * s.springAmount;
-        partA.vx += ax;
-        partA.vy += ay;
-        partB.vx -= ax;
-        partB.vy -= ay;
+        partA.vx += ax / partA.mass;
+        partA.vy += ay / partA.mass;
+        partB.vx -= ax / partB.mass;
+        partB.vy -= ay / partB.mass;
     }
 };
 
