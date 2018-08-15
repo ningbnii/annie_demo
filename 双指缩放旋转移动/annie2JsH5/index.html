@@ -1,0 +1,28 @@
+<!--https://github.com/flash2x/AnnieJS-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flash2AnnieEngine</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,user-scalable=no">
+    <script src="libs/annieCore.min.js"></script>
+    <!--如果有用到annieUI组件类,则需要开启下面的js-->
+    <!--<script src="libs/annieUI.min.js"></script>-->
+    <script src="src/Main.js"></script>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            border: 0px;
+            overflow: hidden;
+            position: absolute;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<!--如果不想canvas全屏而是作为html中的一个标签,请设置div的style.width和style.height为实际值如<div id="annieEngine" style="width:320px;height:576px;line-height:0;font-size:0"></div>-->
+<div id="annieEngine" style="line-height:0;font-size:0"></div>
+</body>
+</html>
